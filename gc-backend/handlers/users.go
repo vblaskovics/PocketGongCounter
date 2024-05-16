@@ -8,15 +8,15 @@ import (
 	"github.com/pocketbase/pocketbase"
 )
 
-func GetCountersFromDatabase(app *pocketbase.PocketBase) []models.Counter {
-	counters := []models.Counter{}
+func GetUsersFromDatabase(app *pocketbase.PocketBase) []models.User {
+	users := []models.User{}
 
 	err := app.Dao().DB().
-		NewQuery("SELECT id, value_1, value_2, user_id FROM counters").
-		All(&counters)
+		NewQuery("SELECT id, email, password FROM users").
+		All(&users)
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to execute query: %v\n", err)
 	}
-	return counters
+	return users
 }

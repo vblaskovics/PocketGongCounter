@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CounterComponent } from './features/counter/counter.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 
@@ -9,6 +9,8 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
     CounterComponent,
     NavbarComponent
   ],

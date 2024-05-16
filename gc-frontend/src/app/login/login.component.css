@@ -1,0 +1,14 @@
+:host {
+    color: rgb(255, 255, 255);
+}
+
+form {
+    border: 1px white solid;
+    border-radius: 5px;
+    padding: .9rem;
+    margin-top: 25vh;
+}
+
+#loginAlert {
+    display: none;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row mt-5 d-flex justify-content-center">
+    <div class="col-12 d-flex justify-content-center">
+      <form class="w-50">
+        <div class="mb-3">
+          <label for="emailAddress" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="emailAddress" [(ngModel)] = "emailAddress" name="emailAddress">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)] = "password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+      </form>
+    </div>
+    <div id="loginAlert" class="alert alert-danger w-50 mt-3 text-center" role="alert">
+      Email address or password is incorrect!
+    </div>
+    
+  </div>
+</div>

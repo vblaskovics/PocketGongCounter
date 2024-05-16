@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { Counter } from './counter.model';
-import { Observable } from 'rxjs';
+import { RecordModel } from 'pocketbase';
+import { AuthService } from '../../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +9,14 @@ import { Observable } from 'rxjs';
 
 export class CounterService {
   api = inject(ApiService)
+  auth = inject(AuthService)
   path = 'counters'
 
-  getCounters$(): Observable<any>{
-    return this.api.get<Counter[]>(this.path)
+  getCounters$(): Promise<RecordModel[]>{
+    return this.api.get(this.auth.authenticatedUserId)
   }
 
-  putCounter$(id: string, bodyParams: string): Observable<any>{
-    return this.api.put(this.path, id, bodyParams)
-  } 
+  updateCounter$(counterId: string, data: any): Promise<RecordModel>{
+    return this.api.update(counterId, data)
+  }
 }
