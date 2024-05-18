@@ -1,11 +1,11 @@
 package db
 
-import (
-	// "gc-backend/handlers"
-	"log"
+import ( // "gc-backend/handlers"
 	// "net/http"
-
 	// "github.com/labstack/echo/v5"
+
+	"log"
+
 	"github.com/pocketbase/pocketbase"
 	// "github.com/pocketbase/pocketbase/core"
 )
@@ -22,7 +22,6 @@ func ConnectToDatabase() {
 	// 	})
 	// 	return nil
 	// })
-
 	if err := app.Start(); err != nil {
 		log.Fatal(err)
 	}
